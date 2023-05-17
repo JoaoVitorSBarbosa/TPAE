@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Questao {
-	public static int lastId;
+	public static int lastId = 1;
 	private int id;
 	private String enunciado;
 	private int gabarito;

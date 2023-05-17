@@ -27,14 +27,15 @@ public class Prova {
 				tentativas++;
 			
 			}
+			tentativas--;
 			correcoes[i] = new Correcao(questoes[i].getId(), acertou, tentativas);
 		}
 		input.close();
 	}
 	public void gerarRelatorio() {
-		System.out.printf("Questão \t Situacao \t Número de Tentativas");
+		System.out.printf("\t Questão \t Situacao \t Número de Tentativas \n");
 		for(int i = 0; i < 5; i++) {
-			System.out.printf("%d \t ",correcoes[i].getQuestao(), (correcoes[i].getAcerto ? "acertou" : "errou"), correcoes[i].getNumTentativas());
+			System.out.printf("%13d%18s%20d\n",correcoes[i].getQuestao(), (correcoes[i].getAcerto() ? "acertou" : "errou"), correcoes[i].getNumTentativas());
 		}
 	
 	}
