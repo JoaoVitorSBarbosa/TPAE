@@ -12,5 +12,7 @@ public class Main {
             System.out.printf("%-10s %-12s %-8s %-10s %n",a.getNome(),a.getNota(),
             a.getFaltas(),a.getSituacao());
         }
+        Sig exe =  new Sig();
+        exe.executar();
     }
 }
