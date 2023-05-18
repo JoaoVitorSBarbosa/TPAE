@@ -4,30 +4,38 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Disciplina {
-    private ArrayList<Aluno> listaAlunos =  new ArrayList<Aluno>(); 
+    private ArrayList<Aluno> listaAlunos; 
     private String codigo;
+    
+    public Disciplina(String codigo) {
+        this.codigo = codigo;
+        listaAlunos =  new ArrayList<Aluno>();
+    }
+
     private boolean getAlunoJaCadastrado (String nome) {
         for(Aluno aluno: listaAlunos) {
             if (aluno.getNome().equals(nome)) return true;
         }
         return false;
     }
-    private Comparator<Aluno> getComparador = new Comparator<Aluno>() {
-        @Override
-        public int compare(Aluno nome1, Aluno nome2){
-            return nome1.getNome().compareTo(nome2.getNome());
-        }
-    };
-    public Disciplina(String codigo) {
-        this.codigo = codigo;
+    
+    private Comparator<Aluno> getComparador() {
+        return new Comparator<Aluno>() {
+            @Override
+            public int compare(Aluno nome1, Aluno nome2){
+                return nome1.getNome().compareTo(nome2.getNome());
+            }
+        };
     }
+    
+    
     public void adicionarAluno (Aluno aluno) {
         if(!getAlunoJaCadastrado(aluno.getNome())) {
             listaAlunos.add(aluno);
         }
     }
     public void ordenarDiario() {
-        Collections.sort(listaAlunos, getComparador);
+        listaAlunos.sort(getComparador());
     }
     public String getCodigo() {
         return codigo;
