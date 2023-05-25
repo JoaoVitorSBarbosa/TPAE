@@ -14,7 +14,9 @@ public class Sig {
         System.out.println("1. Cadastrar disciplina");
         System.out.println("2. Cadastrar dados de aluno em disciplina");
         System.out.println("3. Mostrar diario de disciplina");
-        System.out.println("4. Sair");
+        System.out.println("4. Mostrar códigos de disiplinas cadastradas");
+        System.out.println("5. Limpar tela");
+        System.out.println("6. Sair");
         System.out.println("Escolha uma opcao:");
         
         return input.nextInt();
@@ -25,12 +27,14 @@ public class Sig {
         }
         return false;
     }
-    private void addDisciplina() {
+    private boolean addDisciplina() {
         System.out.println("Digite o código da nova Disciplina");
         String nomeDisciplina = input.nextLine();
         if(!getDisciplinaJaCadastrada(nomeDisciplina)) {
             listaDisciplinas.add(new Disciplina(nomeDisciplina));
+            return true;
         }
+        return false;
     }
     private Disciplina findDisciplina (String nomeDisciplina) {
         for(Disciplina disciplina: listaDisciplinas) {
@@ -78,26 +82,40 @@ public class Sig {
             e.printStackTrace();
         }
     }
+    private void showDisciplinasCodigos() {
+        System.out.printf("\nDisciplinas: \n");
+        for(Disciplina d: listaDisciplinas) {
+            System.out.printf("%s\n",d.getCodigo());
+        }
+    }
     private void executarOpcao(int opcao) {
         input.nextLine();
         switch (opcao) {
-            case 1:
-                addDisciplina();
+            case 1: {
+                System.out.printf("\n%s\n", (addDisciplina() ? "Disciplina cadastrada": "Disciplina não cadastrada"));
                 break;
+            }
             case 2:
                 addAlunoDisciplina();
                 break;
             case 3:
                 showDiarioDisciplina();
                 break;
+            case 4: 
+                showDisciplinasCodigos();
+                break;
             case 5:
                 limparTela();
+                break;
+            default:
+                System.out.println("Opção Inválida");
+                break;
         
         }
     }
     public void executar() {
         int opcao = exibirMenu();
-        while(opcao != 4) {
+        while(opcao != 6) {
             executarOpcao(opcao);
             opcao = exibirMenu();
         }
