@@ -37,7 +37,6 @@ public class Sig {
         return listaDisciplinas.get(nomeDisciplina);
     }
     private void addAlunoDisciplina() {
-        Scanner input = new Scanner(System.in);
         System.out.println("Digite o código da Disciplina");
         String nomeDisciplina = input.nextLine();
         
@@ -56,7 +55,6 @@ public class Sig {
     }
     private void showDiarioDisciplina() {
         System.out.println("Digite o código da Disciplina");
-
         String nomeDisciplina = input.nextLine();
         
         Disciplina disciplina = findDisciplina(nomeDisciplina);
