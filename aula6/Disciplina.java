@@ -23,7 +23,7 @@ public class Disciplina {
         return new Comparator<Aluno>() {
             @Override
             public int compare(Aluno nome1, Aluno nome2){
-                return nome1.getNome().compareTo(nome2.getNome());
+                return nome2.getNota() - nome1.getNota();
             }
         };
     }

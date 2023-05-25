@@ -1,12 +1,12 @@
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class Sig {
-    private ArrayList<Disciplina> listaDisciplinas;
+    private HashMap<String,Disciplina> listaDisciplinas;
     private Scanner input; 
 
     public Sig () {
-        listaDisciplinas = new ArrayList<Disciplina>();
+        listaDisciplinas = new HashMap<String,Disciplina>();
         input = new Scanner(System.in);
     }
     private int exibirMenu() {
@@ -22,25 +22,19 @@ public class Sig {
         return input.nextInt();
     }
     private boolean getDisciplinaJaCadastrada (String codigo) {
-        for(Disciplina disciplina: listaDisciplinas) {
-            if (disciplina.getCodigo().equals(codigo)) return true;
-        }
-        return false;
+        return listaDisciplinas.get(codigo) != null; 
     }
     private boolean addDisciplina() {
         System.out.println("Digite o código da nova Disciplina");
         String nomeDisciplina = input.nextLine();
         if(!getDisciplinaJaCadastrada(nomeDisciplina)) {
-            listaDisciplinas.add(new Disciplina(nomeDisciplina));
+            listaDisciplinas.put(nomeDisciplina, new Disciplina(nomeDisciplina));
             return true;
         }
         return false;
     }
     private Disciplina findDisciplina (String nomeDisciplina) {
-        for(Disciplina disciplina: listaDisciplinas) {
-            if(disciplina.getCodigo().equals(nomeDisciplina)) return disciplina;
-        }
-        return null;
+        return listaDisciplinas.get(nomeDisciplina);
     }
     private void addAlunoDisciplina() {
         Scanner input = new Scanner(System.in);
@@ -84,8 +78,8 @@ public class Sig {
     }
     private void showDisciplinasCodigos() {
         System.out.printf("\nDisciplinas: \n");
-        for(Disciplina d: listaDisciplinas) {
-            System.out.printf("%s\n",d.getCodigo());
+        for(String codigo: listaDisciplinas.keySet()) {
+            System.out.printf("%s\n",codigo);
         }
     }
     private void executarOpcao(int opcao) {
