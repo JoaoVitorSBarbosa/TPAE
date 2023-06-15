@@ -20,10 +20,10 @@ public class Simulador {
     }
     private void criarFilaClientes() {
         int tempoChegada = 0;
-        tempoChegada = tempoChegada + randGenerator.nextInt(8);
+        tempoChegada = tempoChegada + randGenerator.nextInt(4);
         while(tempoChegada < duracaoSimulacao) {
-            filaClientes.add(new Cliente(tempoChegada, randGenerator.nextInt(4)));
-            tempoChegada = tempoChegada + randGenerator.nextInt(8);
+            filaClientes.add(new Cliente(tempoChegada, randGenerator.nextInt(8)));
+            tempoChegada = tempoChegada + randGenerator.nextInt(4);
         }
     }
     
