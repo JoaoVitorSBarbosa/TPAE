@@ -10,6 +10,6 @@ public class SeguroCasa extends SeguroResidencial{
     }
     @Override
     public String toString() {
-        return super.toString() + "\nCondomio: " + (estaEmCondominio ? "Sim" : "Não") + "\nPrêmio: " + calculaPremio();
+        return super.toString() + "\nCondomio: " + (estaEmCondominio ? "Sim" : "Não");
     }
 }

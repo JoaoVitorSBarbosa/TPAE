@@ -1,4 +1,4 @@
-public class SeguroResidencial implements Segurados{
+public abstract class SeguroResidencial implements Segurados{
     private int tamanho;
     public SeguroResidencial(int tamanho) {
         this.tamanho = tamanho;
@@ -7,11 +7,7 @@ public class SeguroResidencial implements Segurados{
         return tamanho;
     }
     @Override
-    public int calculaPremio() {
-        return -1;
-    }
-    @Override
     public String toString() {
-        return "\nTamanho: " + tamanho;
+        return "\nTamanho: " + tamanho + "\nPrêmio: " + calculaPremio();
     }
 }

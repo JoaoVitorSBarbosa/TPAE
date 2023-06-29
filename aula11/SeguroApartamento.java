@@ -10,6 +10,6 @@ public class SeguroApartamento extends SeguroResidencial{
     }
     @Override
     public String toString() {
-        return super.toString() + "\nAndares: " + numeroDeAndaresPredio + "\nPrêmio: " + calculaPremio();
+        return super.toString() + "\nAndares: " + numeroDeAndaresPredio;
     }
 }
