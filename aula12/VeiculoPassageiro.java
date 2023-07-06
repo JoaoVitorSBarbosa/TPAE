@@ -1,5 +1,3 @@
-package aula12;
-
 public class VeiculoPassageiro extends NotaFiscal{
     private int capacidade;
 

@@ -1,5 +1,3 @@
-package aula12;
-
 public class VeiculoCarga extends NotaFiscal{
     private boolean cabineDupla;
 

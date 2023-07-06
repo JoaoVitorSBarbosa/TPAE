@@ -1,5 +1,3 @@
-package aula12;
-
 public class VeiculoPasseio extends NotaFiscal{
 
     public VeiculoPasseio(int valorDiaria, int numeroDias) {

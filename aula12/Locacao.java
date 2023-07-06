@@ -1,5 +1,3 @@
-package aula12;
-
 public class Locacao {
     private NotaFiscal tipoNota;
 

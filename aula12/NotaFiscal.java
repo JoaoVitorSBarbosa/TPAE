@@ -1,5 +1,3 @@
-package aula12;
-
 public abstract class NotaFiscal {
     private int valorDiaria;
     private int numeroDias;
