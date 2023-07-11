@@ -22,15 +22,15 @@ public abstract class Salario {
         //Desconto do Imposto de Renda Retido na Fonte
         double descIRRF = 0;
         if(salarioBruto == SALARIO_MINIMO){
-            descINSS = 0;
+            descIRRF = 0;
         }else if(salarioBruto < 2 * SALARIO_MINIMO ){
-            descINSS = salarioBruto * 0.075;
+            descIRRF = salarioBruto * 0.075;
         }else if(salarioBruto < 3 * SALARIO_MINIMO){
-            descINSS = salarioBruto * 0.15;
+            descIRRF = salarioBruto * 0.15;
         }else if(salarioBruto < 4 * SALARIO_MINIMO){
-            descINSS = salarioBruto * 0.225;
+            descIRRF = salarioBruto * 0.225;
         }else{
-            descINSS = salarioBruto * 0.275;
+            descIRRF = salarioBruto * 0.275;
         }
         //Desconto com Vale Transporte
         double descVT = calculaDescVT(salarioBruto);

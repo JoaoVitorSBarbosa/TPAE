@@ -5,7 +5,7 @@ public class MinasGerais extends Salario{
     }
     @Override
     public double calculaDescPS(double salarioBruto) {
-        return salarioBruto * 0.05;
+        return salarioBruto * 0.02;
     }
 
 }
